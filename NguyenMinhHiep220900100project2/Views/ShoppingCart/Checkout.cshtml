@@ -1,0 +1,34 @@
+﻿@model IEnumerable<NguyenMinhHiep220900100project2.Models.CartItem>
+
+@{
+    ViewBag.Title = "Thanh Toán";
+}
+
+<div class="container">
+    <h2 class="text-center my-4">Thanh Toán</h2>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Sản Phẩm</th>
+                <th>Giá</th>
+                <th>Số Lượng</th>
+                <th>Tổng</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.TenSanPham</td>
+                    <td>@item.Gia.ToString("C")</td>
+                    <td>@item.SoLuong</td>
+                    <td>@(item.Gia * item.SoLuong).ToString("C")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="text-right">
+        <h4>Tổng tiền: <span>@Model.Sum(i => i.Gia * i.SoLuong).ToString("C")</span></h4>
+        <a href="@Url.Action("Checkout", "ShoppingCart")" class="btn btn-success">Thanh Toán</a>
+    </div>
+</div>

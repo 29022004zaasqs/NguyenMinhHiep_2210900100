@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e5590e5a966345c784af5ce38627fc20" Name="Diagram1">
+        <EntityTypeShape EntityType="QLBH2210900100NMH_Model.ChiTietDonHang" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBH2210900100NMH_Model.DanhMuc" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBH2210900100NMH_Model.DonHang" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBH2210900100NMH_Model.KhachHang" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBH2210900100NMH_Model.NguoiDung" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBH2210900100NMH_Model.SanPham" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="QLBH2210900100NMH_Model.FK__ChiTietDo__MaDon__1BFD2C07" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBH2210900100NMH_Model.FK__ChiTietDo__MaSan__1CF15040" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBH2210900100NMH_Model.FK__SanPham__MaDanhM__1273C1CD" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBH2210900100NMH_Model.FK__DonHang__MaKhach__1920BF5C" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

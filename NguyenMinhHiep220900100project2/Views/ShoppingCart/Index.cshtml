@@ -1,0 +1,57 @@
+﻿@model IEnumerable<NguyenMinhHiep220900100project2.Models.CartItem>
+
+@{
+    ViewBag.Title = "Giỏ Hàng";
+}
+
+<div class="container">
+    <h2 class="text-center my-4">Giỏ Hàng</h2>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Sản Phẩm</th>
+                <th>Giá</th>
+                <th>Số Lượng</th>
+                <th>Tổng</th>
+                <th>Hành Động</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.TenSanPham</td>
+                    <td>@item.Gia.ToString("C")</td>
+                    <td>
+                        @using (Html.BeginForm("UpdateQuantity", "ShoppingCart", FormMethod.Post))
+                        {
+                            @Html.AntiForgeryToken()
+                            @Html.Hidden("maSanPham", item.MaSanPham)
+                            @Html.TextBox("soLuong", item.SoLuong, new { @class = "form-control", @style = "width: 70px; display: inline-block;" })
+                            <input type="submit" value="Cập nhật" class="btn btn-primary btn-sm" />
+                        }
+                    </td>
+                    <td>@(item.Gia * item.SoLuong).ToString("C")</td>
+                    <td>
+                        @Html.ActionLink("Xóa", "RemoveFromCart", new { maSanPham = item.MaSanPham }, new { @class = "btn btn-danger btn-sm", @onclick = "return confirm('Bạn có chắc chắn muốn xóa sản phẩm này không?');" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    @if (Model.Any())
+    {
+        <div class="text-right">
+            <h4>Tổng tiền: <span>@Model.Sum(i => i.Gia * i.SoLuong).ToString("C")</span></h4>
+            <a href="@Url.Action("Checkout", "ShoppingCart")" class="btn btn-success">Thanh Toán</a>
+        </div>
+    }
+    else
+    {
+        <div class="text-center">
+            <p>Giỏ hàng của bạn hiện tại chưa có sản phẩm.</p>
+        </div>
+    }
+
+</div>

@@ -1,0 +1,48 @@
+﻿@model IEnumerable<NguyenMinhHiep220900100project2.Models.ChiTietDonHang>
+
+@{
+    ViewBag.Title = "Chi Tiết Đơn Hàng";
+}
+
+<div class="container mt-4">
+    <h2 class="text-center mb-4">@ViewBag.Title</h2>
+
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <p class="lead">Danh sách chi tiết đơn hàng trong hệ thống.</p>
+        @Html.ActionLink("Thêm Chi Tiết Mới", "Create", null, new { @class = "btn btn-primary" })
+    </div>
+
+    <table class="table table-striped table-bordered table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.SoLuong)</th>
+                <th>@Html.DisplayNameFor(model => model.Gia)</th>
+                <th>@Html.DisplayNameFor(model => model.NgayTao)</th>
+                <th>@Html.DisplayNameFor(model => model.NgayCapNhat)</th>
+                <th>@Html.DisplayNameFor(model => model.DonHang.TrangThai)</th>
+                <th>@Html.DisplayNameFor(model => model.SanPham.Ten)</th>
+                <th class="text-center">Thao Tác</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.SoLuong)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Gia)</td>
+                    <td>@Html.DisplayFor(modelItem => item.NgayTao)</td>
+                    <td>@Html.DisplayFor(modelItem => item.NgayCapNhat)</td>
+                    <td>@Html.DisplayFor(modelItem => item.DonHang.TrangThai)</td>
+                    <td>@Html.DisplayFor(modelItem => item.SanPham.Ten)</td>
+                    <td class="text-center">
+                        <div class="btn-group" role="group">
+                            @Html.ActionLink("Sửa", "Edit", new { id = item.MaChiTietDonHang }, new { @class = "btn btn-sm btn-warning" })
+                            @Html.ActionLink("Chi Tiết", "Details", new { id = item.MaChiTietDonHang }, new { @class = "btn btn-sm btn-info" })
+                            @Html.ActionLink("Xóa", "Delete", new { id = item.MaChiTietDonHang }, new { @class = "btn btn-sm btn-danger" })
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

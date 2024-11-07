@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Trang web quản lý bán hàng">
+    <meta name="author" content="Tên của bạn">
+    <title>@ViewBag.Title - Quản Lý Bán Hàng</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <style>
+        /* Custom CSS */
+        body {
+            padding-top: 70px;
+        }
+
+        .navbar-nav .nav-item .nav-link {
+            margin-right: 10px;
+        }
+
+        .navbar-brand {
+            font-size: 1.5em;
+        }
+
+            .navbar-brand img {
+                height: 40px;
+                margin-right: 10px;
+            }
+
+        footer {
+            background: #343a40;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="@Url.Action("Index", "Home")">
+                <img src="~/Content/images/logo.png" alt="Logo" />
+                Quản Lý Bán Hàng
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">@Html.ActionLink("Trang Chủ", "Index", "Home", null, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("Sản Phẩm", "Index", "SanPhams", null, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("Giỏ Hàng", "Index", "ShoppingCart", null, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("Đăng Nhập", "Login", "Account", null, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("Đăng Ký", "Register", "Account", null, new { @class = "nav-link" })</li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        @RenderBody()
+    </div>
+
+    <footer class="mt-5">
+        <p>&copy; @DateTime.Now.Year - Quản Lý Bán Hàng</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

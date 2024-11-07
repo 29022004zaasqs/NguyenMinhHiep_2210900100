@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Chủ - Quản Lý Bán Hàng</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom CSS */
+        body {
+            padding-top: 70px;
+        }
+
+        .navbar-nav .nav-item .nav-link {
+            margin-right: 10px;
+        }
+
+        footer {
+            background: #343a40;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="/">Quản Lý Bán Hàng</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="/">Trang Chủ</a></li>
+                <li class="nav-item"><a class="nav-link" href="/SanPhams/Index">Sản Phẩm</a></li>
+                <li class="nav-item"><a class="nav-link" href="/ShoppingCart/Index">Giỏ Hàng</a></li>
+                <li class="nav-item"><a class="nav-link" href="/Account/Login">Đăng Nhập</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Chào Mừng Đến Với Cửa Hàng Của Chúng Tôi</h2>
+        <div class="row">
+            <!-- Product 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img class="card-img-top" src="~/Content/images/products/images.png" alt="Product 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Áo Len</h5>
+                        <p class="card-text">Vải bông</p>
+                        <a href="@Url.Action("Index", "SanPhams")" class="btn btn-primary">Xem Chi Tiết</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img class="card-img-top" src="~/Content/images/products/aokhoac.png"  alt="Product 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Áo Khoác</h5>
+                        <p class="card-text">Vải da cao cấp</p>
+                        <a href="@Url.Action("Index", "SanPhams")" class="btn btn-primary">Xem Chi Tiết</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img class="card-img-top" src="~/Content/images/products/aoda.png" alt="Product 3">
+                    <div class="card-body">
+                        <h5 class="card-title">áo da</h5>
+                        <p class="card-text">Chất liệu da bền bỉ</p>
+                        <a href="@Url.Action("Index", "SanPhams")" class="btn btn-primary">Xem Chi Tiết</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img class="card-img-top" src="~/Content/images/products/quan.png" alt="Product 4">
+                    <div class="card-body">
+                        <h5 class="card-title">Quần Jeans</h5>
+                        <p class="card-text">Vải co giãn thoải mái</p>
+                        <a href="@Url.Action("Index", "SanPhams")" class="btn btn-primary">Xem Chi Tiết</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img class="card-img-top" src="~/Content/images/products/aophao.png" alt="Product 5">
+                    <div class="card-body">
+                        <h5 class="card-title">Áo</h5>
+                        <p class="card-text">Thiết kế thời thượng</p>
+                        <a href="@Url.Action("Index", "SanPhams")" class="btn btn-primary">Xem Chi Tiết</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

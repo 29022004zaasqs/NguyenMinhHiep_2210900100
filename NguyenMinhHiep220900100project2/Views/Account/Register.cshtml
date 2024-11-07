@@ -1,0 +1,32 @@
+﻿@model NguyenMinhHiep220900100project2.Models.AccountViewModel
+
+@{
+    ViewBag.Title = "Đăng Ký";
+}
+
+<h2>Đăng Ký</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.TenDangNhap)
+        @Html.TextBoxFor(m => m.TenDangNhap, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.TenDangNhap, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.MatKhau)
+        @Html.PasswordFor(m => m.MatKhau, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.MatKhau, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.MatKhauXacNhan)
+        @Html.PasswordFor(m => m.MatKhauXacNhan, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.MatKhauXacNhan, "", new { @class = "text-danger" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Đăng Ký</button>
+}
